@@ -204,6 +204,32 @@ footer{
 
 
 
+.cursor-circle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(113, 71, 129, 0.6) 0%, rgba(66, 30, 80, 0.15) 80%, transparent 100%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s linear;
+}
+
+
+body {
+    cursor: none;
+}
+
+.cursos-titulo {
+    margin-top: 90px; 
+}
+
+.doss {
+    padding-bottom: 90px;
+}
 
 
 
