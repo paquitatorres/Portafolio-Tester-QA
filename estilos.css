@@ -1,19 +1,15 @@
-
-
-
-
 body{
     padding: 0;
     margin: 0;
     width: 100%;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
-    height: 100hv;
+    height: 100;
 }
 
 /*el menú */
 header{
-    background-color: purple;
+    background-color: rgb(73, 18, 117);
     position: sticky;
     top:0;
     z-index: 999;
@@ -96,7 +92,7 @@ header a{
     top: 70px;
     gap: 0;
     flex-direction: column;
-    background-color: #0e0d0d;
+    background-color: #431c55;
     width: 100%;
     text-align: center;
     transition: 0.3s;
@@ -110,26 +106,23 @@ header a{
 
 }
 
-
-
-
-
-
-
 /*tarjeta de presentacion*/
-
 
 .cara{
     border-radius: 500px;
     height: 200px;
 }
+/**/
 .uno{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     height: calc(100vh - 65px);
-    background-color: #290641;
+    background:#290641 url('imagenes/cielo-estrellado.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     /* padding-top: 10%; */
 }
@@ -147,19 +140,31 @@ header a{
     justify-content: center;
     align-items: center;
     width: 40%;
-    background-color: #424242;
+    background-color: #525151a6;
 }
+
 .caja-presentacion{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 60%;
-    background-color: #F2F2F2;
-    color: #303030;
+    background-color: #f2f2f2de;
+    color: #1d1c1c;
     padding: 10px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    overflow: auto;
 }
-
-
+/*parrafo en la caj de presentacion*/
+.caja-presentacion h1{
+    margin: 15px;
+}
+.caja-presentacion p {
+word-break: break-word;
+margin: 15px;
+line-height: 1.5;
+}
 /*botones dentro de la caja de presentacion*/
 .caja-button{
 display: flex;
@@ -177,6 +182,7 @@ display: flex;
   transition: 0.3s;
   box-shadow: 5px 5px 0px 0px rgb(36, 35, 36);
   background-color: #ecebef;
+  gap: 8px;
 }
 .caja-button:hover {
   box-shadow: 0 0 #644975;
@@ -192,6 +198,12 @@ display: flex;
   justify-content: center;
   margin-top: 20px;
 }
+
+.caja-presentacion a {
+  text-decoration: none;
+}
+
+
 
 @media (max-width: 600px) {
   .botones {
@@ -239,22 +251,27 @@ display: flex;
     padding: 20px;
     min-height: 300px;     
   }
+
+  /**/
+  
   .botones {
     flex-direction: column;
     gap: 15px;
-  }
+    display: grid;
+ grid-template-columns: repeat(auto-fit, 220px);
+  margin-top: 20px;
+  justify-content: center;
+  /*uno mas atras*/
 }
 
 
+}
 
-
-
-
-
+/*about me , revisar */
 
 .dos{
     background-color: #F2F2F2;
-    height: 700px;
+    height: 880px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -262,10 +279,27 @@ display: flex;
     color: #303030;
     padding-left: 20%;
     padding-right: 20%;
-    
+   
 }
 
-.doss{
+.dos h2 {
+margin-top: 60px;
+margin-bottom: 28px;
+}
+
+.dos p {
+text-align: left; 
+}
+
+
+
+
+
+
+
+/**/
+
+.conocimientos{
     background-color: #ffffff;
     min-height: 700px;
     display: flex;
@@ -274,20 +308,28 @@ display: flex;
     color: #303030;
     padding: 60px 20%;
     text-align: center;
-    gap: 40px;
-    
+    gap: 40px;   
 }
 
+.conocimientos h2 {
+margin-top: 40px;
+margin-bottom: 0px;    
+}
 
+.conocimientos p {
+    margin-top: 0px;
+}
 
-
-
-.aptitudes{
-    width: 1000%;
+.tools{
+    width: 100%;
     max-width: 800px;
-    margin: 10px 0;
-
+    margin: 0px auto;
+    padding: 0 1rem;
+box-sizing: border-box;
 }
+
+
+
 .tech-list{
     display: flex;
     justify-content: center;
@@ -298,10 +340,98 @@ display: flex;
 }
 
 .tech{
-    height: 90px;
+
+    height: 80px;
     object-fit: contain;
     border-radius: 6px;
 }
+
+@media (max-width: 600px) {
+  .tech-list {
+    flex-direction: column;   /* apila verticalmente */
+    align-items: center;      /* centra cada ícono */
+  }
+
+  .tooltip {
+    width: 100%;              /* cada tooltip ocupa todo el ancho disponible */
+    max-width: 200px;         /* opcional: límite para no estirarse demasiado */
+  }
+
+  .tech {
+    max-width: 90px;          /* mantiene un tamaño consistente */
+    width: 100%;
+    height: auto;
+    margin-bottom: 12px;      /* separación vertical */
+  }
+}
+
+
+/*ESPACIO EN CURSOS*/
+
+.cursos-titulo {
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+ul {
+    max-width: 700px;
+    margin: 0 auto 60px; 
+    text-align: left;
+    list-style-position: inside;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    padding-inline-start: 1em;
+    box-sizing: border-box;
+    font-weight: 580;
+}
+ul li {
+  margin-bottom: 0.3rem; }
+ul li:last-child {
+  margin-bottom: 0;
+}
+
+/*etiquetas*/
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  bottom: 110%;                /* Ubica el tooltip arriba de la imagen */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #290641;  /* Fondo oscuro con contraste */
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: normal;
+  width: 300px;
+  box-sizing: border-box;
+  z-index: 10;
+  text-align: center;
+}
+/*probar max-width en caso que el ancho no sea responsive o subsdividir tamaños*/
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .tres{
     background-color: #303030;
@@ -436,24 +566,11 @@ body {
     margin-top: 90px; 
 }
 
-.doss {
+/*.doss {
     padding-bottom: 90px;
-}
+}*/
 
 
-/*ESPACIO EN CURSOS*/
-
-.cursos-titulo {
-    margin-top: 60px;
-    margin-bottom: 20px;
-}
-
-ul {
-    max-width: 600px;
-    margin: 0 auto 60px auto; 
-    text-align: left;
-    list-style-position: inside;
-}
 
 
 /* EL AREA DE PROYECTO DE TESTING */
@@ -461,14 +578,19 @@ ul {
 
 .testingManual {
     text-align: center;
-    padding: 120px 30px;
+    padding: 48px 30px;
     background-color: #ffffff;
     color: #303030;
+    margin-bottom:  60px;
 }
 
 .testingManual h2 {
     font-size: 2rem;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.testingManual p {
+margin-bottom: 25px;
 }
 
 .ProyectoManual {
@@ -500,36 +622,3 @@ ul {
 
 
 
-/* BOTON CV 
-
-.right-button{
- position: fixed;
-      top: 10px;
-      right: 20px;
-    border: 0; 
-    background-image: linear-gradient(
-        150deg,
-        #9500ff,
-        #09f,
-        #3c5558
-    );
-    border-radius: 8px;
-    color: #fff;
-    display:flex;
-    font-size: 18px;
-    padding:4px;
-    cursor:pointer;
-    transition: .3s;
-}
-.right-button span {
-    background-color: #111;
-    padding: 16px 24px;
-    border-radius: 6px;
-    transition: .3s;
-}
-.right-button:hover span {
-    background: none;
-}
-.right-button:active{
-    transform: scale(0.9);
-}
