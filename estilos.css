@@ -561,7 +561,7 @@ footer{
   color: #333333;
   font-size: 18px;
   border-radius: 5px;
-  width: 200px;
+  width: 230px;
   height: 40px;
   font-weight: bold;
   border: 2px solid #2d2058;
@@ -575,9 +575,12 @@ footer{
 transform: translateX(-50%); 
   z-index: 10;
  
-
-
 }
+ #enProceso.btn-proyect{ 
+ color: #0f0909;
+ background-color: #3c383d;
+}
+
 
 .btn-proyect:hover {
   box-shadow: 0 0 #333;
