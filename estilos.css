@@ -43,10 +43,10 @@ header a{
     padding:0; 
 }
 
-.nav-branding{
+h1.nav-branding{
     color: white;
     font-size: clamp(1.2rem,4vw,1.8rem);
-     /*font-size: 2rem;*/
+    /*font-size: 2rem;*/
     margin: 0;
     padding:0; 
     line-height: 1;
@@ -119,7 +119,7 @@ header a{
     flex-direction: row;
     justify-content: center;
     height: calc(100vh - 65px);
-    background:#290641 url('imagenes/cielo-estrellado.png');
+    background:#290641 url('imagenes/cielo-estrellado.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -577,7 +577,7 @@ transform: translateX(-50%);
  
 }
  #enProceso.btn-proyect{ 
- color: #0f0909;
+ color: #f1f1f1;
  background-color: #3c383d;
 }
 
