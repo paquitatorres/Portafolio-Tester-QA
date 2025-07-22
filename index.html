@@ -13,28 +13,44 @@
     <meta name="author" content="Maria Lujan Torres">
     <meta name="theme-color" content="#5b2c6f">
     <meta name="robots" content="index,follow">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> 
 
 </head>
+ <body>
 
 
-    <body>
+<header>
 
+<nav class="navbar">
+<h1 class="nav-branding"> <a href="#inicio">Tester QA - Maria Lujan Torres</a> </h1>
 
-    <header>
+<ul class="nav-menu">
+<li class="nav-item">
+    <a href="#aboutMe" class="nav-link">Sobre mi</a>
+</li>
+<li class="nav-item">
+    <a href="#tools" class="nav-link">Conocimientos</a>
+</li>
+<li class="nav-item">
+    <a href="#ProyectoTestingManual" class="nav-link">Portafolio Tester Manual</a>
+</li>
+<li class="nav-item">
+    <a href="#practicas" class="nav-link">Otros Proyectos</a>
+</li>
+</ul>
+<div class="hamburger">
+    <span class="bar"> </span>
+    <span class="bar"> </span>
+    <span class="bar"> </span>
+</div>
 
-        <h1> Tester QA - Maria Lujan Torres </h1>
-      
-             <a href="/docs/CV-TESTER Maria Lujan Torres (ESP) .pdf" download>
-                <button class="right-button"> <span>Descargar CV</span> </button>
-            </a>
-       
-       
-    </header>
+</nav>
 
+</header>
 
+<section id="inicio"> </section>
     <section class="uno">
-        <div class="caja-central">
+        <div class="caja-central" >
             <div class="caja-cara">
                 <img class="cara" src="imagenes/mi.jpg" alt="Tester QA">            
             </div>
@@ -44,18 +60,29 @@
                     <p class="presentacion">
                         Con el claro objetivo de aportar a la mejora continua, y asegurar la calidad de producto en entornos industriales y del mundo IT.
                     </p>
+
+                  
+                <div class="botones">
+                <a href="https://raw.githubusercontent.com/paquitatorres/Portafolio-Tester-QA/main/docs/CV-TESTER%20Maria%20Lujan%20Torres%20(ESP)%20.pdf"download>
+                <button class="caja-button"> <i class="fa-regular fa-file"></i> <span>  Descargar CV  </span> </button>
+                </a>
+
+                 <a href="https://www.linkedin.com/in/malujantorres/">
+                <button class="caja-button"> <i class="fa-brands fa-linkedin"></i> <span> Linked In</span> </button>
+                </a>
+                </div>
+          
+
                 </div>
             </div>
         </div>
     </section>
 
-
     
-    <section class="dos">
+    <section class="dos" id="aboutMe">
         <h2>Sobre mí</h2>
         
-        <p>
-            Mi nombre es Lujan, me estoy recibiendo de Licenciada Química y la vida me llevo a que me enamore del <strong>control de calidad</strong>.  
+    <p> Hola, mi nombre es Luján y actualmente me encuento en <strong>Rosario, Argentina </strong> . Me estoy recibiendo de Licenciada Química y la vida me llevo a que me enamore del mundo de <strong>control de calidad</strong>.  
         </p>
         <p> 
               💊  A lo largo de mis estudios, se me despertó el interés sobre la calidad no solo de los productos final sino de los proceso, lo que me llevó a interesarme en el campo del <strong> aseguramiento de la calidad de los productos</strong>.    
@@ -74,32 +101,84 @@
         </p>
         </section>
 
-     
-        <section class="doss">
 
-            <div>
-                <h2>Aptitudes</h2>
-            </div>
-        
+ <section class="conocimientos" id="tools">          
+                <h2>Conocimientos</h2>      
         <p>
-            Estas son algunas de las tecnologías de las cuales tengo conocimientos.
+            Estas son algunas de las tecnologías de las cuales tengo conocimiento.
         </p>
 
-        <div class="aptitudes">
-            <div class="tech-list">
-                <img src="https://www.nexustech.je/media/yyaacx1w/sql-1.png" class="tech" alt="SQL">
-                <img src="https://nareshit.in/wp-content/uploads/2013/02/Selenium-Training-NareshIT.jpg" class="tech" alt="Selenium WebDriver">
-                <img src="https://seeklogo.com/images/P/postman-api-platform-logo-D6B8AB9B0D-seeklogo.com.png" class="tech" alt="Postman">
 
-            </div>
+<div class="tools">
+           
+                <div class="tech-list">
 
-            <div class="tech-list">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/1280px-MongoDB_Logo.svg.png" class="tech" alt="Mongo DB">
-                <img src="data:image/png;base64,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" class="tech" alt="JMeter">
-                <img src="data:image/jpeg;base64,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" class="tech" alt="Power Bi">
-          
-            </div>       
-        </div>
+                     <div class="tooltip">
+  <img src="https://www.nexustech.je/media/yyaacx1w/sql-1.png" class="tech" alt="SQL" loading="lazy">
+  <span class="tooltiptext"> SQL- Permite consultar bases de datos para validar la integridad y consistencia de los datos. </span>
+                    </div>
+ 
+                      <div class="tooltip">
+  <img src="https://nareshit.in/wp-content/uploads/2013/02/Selenium-Training-NareshIT.jpg" class="tech" alt="Selenium WebDriver" loading="lazy">
+  <span class="tooltiptext">Selenium WebDriver - Herramienta clave para la automatización de pruebas funcionales.</span>
+                     </div>
+
+                     <div class="tooltip">
+  <img src="https://images.seeklogo.com/logo-png/44/2/github-colored-logo-png_seeklogo-443793.png" class="tech" alt="GitHub" loading="lazy">
+  <span class="tooltiptext"> GitHub- Es fundamental para el control de versiones y trabajo colaborativo en proyectos de software.</span>
+                     </div>
+
+                </div>
+
+
+<div class="tech-list">
+
+                      <div class="tooltip">
+  <img src="https://seeklogo.com/images/P/postman-api-platform-logo-D6B8AB9B0D-seeklogo.com.png" class="tech" alt="Selenium WebDriver" loading="lazy">
+  <span class="tooltiptext">Postman- Permite probar y validar APIs de forma manual o automatizada, verificando que los endpoints funcionen correctamente.</span>
+                     </div>
+
+                     <div class="tooltip">
+  <img src="data:image/jpeg;base64,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" class="tech" alt="JIRA" loading="lazy">
+  <span class="tooltiptext"> JIRA- Sirve para reportar, rastrear y dar seguimiento a bugs o tareas, integrándose con otras herramientas de QA.</span>
+                     </div>
+
+                     <div class="tooltip">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsKQ7V32n674Gg7oInLiVmEsmM-obBT6lavg&s" class="tech" alt="Cypress" loading="lazy">
+  <span class="tooltiptext"> Cypress- Es una herramienta que permite ejecutar pruebas E2E (end-to-end) de forma rápida y visual.</span>
+                    </div>
+
+                </div>
+
+
+ <div class="tech-list">
+
+                <div class="tooltip">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Apache_JMeter.png" class="tech" alt="JMeter" loading="lazy">
+  <span class="tooltiptext"> JMeter - permite realizar pruebas de rendimiento, carga y estrés en aplicaciones web, APIs y sistemas para medir su comportamiento bajo distintas condiciones.
+</span>
+
+                </div>
+                
+                <div class="tooltip">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" class="tech" alt="Notion" loading="lazy">
+  <span class="tooltiptext"> Notion - Es una herramienta de productividad que permite documentar, organizar y gestionar flujos de trabajo, planes , checklists y seguimiento de tareas de forma colaborativa.
+</span>
+
+                </div>
+         
+                <div class="tooltip">
+  <img src="https://logos-world.net/wp-content/uploads/2022/02/Microsoft-Power-BI-Symbol.png" class="tech" alt="Power BI" loading="lazy">
+  <span class="tooltiptext"> Power Bi- Sirve para análisar grandes volumenes de datos y visualizarlos creando dashboards interactivos para reportar métricas, KPIs de calidad o resultados de procesos.
+</span>
+                </div>
+                     
+</div>
+
+                       
+</div>       
+        
+
 
 
         <h2 class="cursos-titulo">Cursos realizados</h2>
@@ -114,7 +193,7 @@
             <li>Curso de Fundamentos de la Programación Nivel Universidad </li>
             <li>Curso de Programación con C# Nivel 1: Logica de Programación</li>
             <li>Curso de Programación con C# Nivel 2: POO + .NET + SQL</li>
-            <li>Curso de Programación con C# Nivel 3: Web ASP .NET Parte 1</li>
+            <li>Curso de Programación con C# Nivel 3: Web ASP .NET </li>
            
         </ul>
 
@@ -124,8 +203,64 @@
  
 
 
-    <section class="tres">
-        <h2> Algunas practicas que realice : </h2>
+
+
+
+
+
+
+
+
+
+<section class="testingManual" id="ProyectoTestingManual">
+<h2>
+
+    Practica de Tester Manual y Performance
+
+</h2>
+
+<p>
+
+    Se realiza todo un proceso de testeo a una pagina creada para ese fin.  
+
+
+</p>
+
+
+<div class="ProyectoManual">
+
+<a href="https://night-string-a4d.notion.site/Plan-de-Prueba-E-commerce-Demoblaze-1615a190d59280e791e2d58af9945b31"  target="_blank" rel="noopener noreferrer"><img src="https://night-string-a4d.notion.site/image/attachment%3A6508c305-ac13-4416-9b28-7a43f6ad3e6d%3AAgregar_un_ttulo_(1).png?table=block&id=2205a190-d592-803d-895c-cf5b21cdcb99&spaceId=db476a1f-27e0-45c4-aca6-ac1ec03ebd7b&width=650&userId=&cache=v2" alt="Plan de pruebas">
+</a>
+
+<a href="https://night-string-a4d.notion.site/An-lisis-de-requerimientos-y-creaci-n-de-Historias-de-usuario-1885a190d59280928324cd0331f56ae6" target="_blank" rel="noopener noreferrer"> <img src="https://night-string-a4d.notion.site/image/attachment%3Ae4ddc7fe-6169-4527-bab0-79194356cee8%3AAgregar_un_ttulo_(3).png?table=block&id=2205a190-d592-80af-81b3-d1a5fa48cf69&spaceId=db476a1f-27e0-45c4-aca6-ac1ec03ebd7b&width=650&userId=&cache=v2" alt="Analisis y historia de usuarios">
+</a>
+
+<a href="https://night-string-a4d.notion.site/Casos-de-Prueba-de-Historias-de-usuario-1885a190d592803bb122f245a34f87d3" target="_blank" rel="noopener noreferrer"> <img src="https://night-string-a4d.notion.site/image/attachment%3A67865739-df6b-4afe-aa37-d09f981bf17e%3AAgregar_un_ttulo_(4).png?table=block&id=2215a190-d592-809b-9140-dab6b5f7b5c3&spaceId=db476a1f-27e0-45c4-aca6-ac1ec03ebd7b&width=650&userId=&cache=v2" alt="Casos de prueba">
+</a>
+
+<a href="https://night-string-a4d.notion.site/Performance-1885a190d5928023915bc7ea9ff1c87e" target="_blank" rel="noopener noreferrer"> <img src="https://night-string-a4d.notion.site/image/attachment%3Aabdc26c7-0250-4113-acce-b5e55d63b8da%3AAgregar_un_ttulo_(5).png?table=block&id=2215a190-d592-806e-b6f6-cc2366e2cf90&spaceId=db476a1f-27e0-45c4-aca6-ac1ec03ebd7b&width=650&userId=&cache=v2" alt="Performance testing">
+ </a>
+
+<a href="https://night-string-a4d.notion.site/Informe-y-Sugerencias-de-mejoras-1885a190d592808cb416c88ada53dac4" target="_blank" rel="noopener noreferrer"> <img src="https://night-string-a4d.notion.site/image/attachment%3A0017f8d4-76fd-4513-a49b-a9da4cd7cb00%3AAgregar_un_ttulo_(6).png?table=block&id=2215a190-d592-8066-aad0-f3810a303067&spaceId=db476a1f-27e0-45c4-aca6-ac1ec03ebd7b&width=650&userId=&cache=v2" alt="Informe final">
+</a>
+
+</div>
+
+</section >
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="tres" id="practicas">
+        <h2> Otras practicas que realice: </h2>
         <div class="proyectos"> 
             <div class="card">
                 <h3>Base de Datos para Logística de una Distribuidora Agropecuaria </h3>
@@ -133,8 +268,28 @@
                 <p>
                      Esta permite gestiónar la logistica de una distribuidora de productos agropecuarios, realizar diferentes consultas tanto simples como complejas. Resuelve el problema de saber cual es la ubicacion de los lotes de los productos proximos a vencer.
                 </p>
-                <a href="https://night-string-a4d.notion.site/Proyecto-Base-de-Datos-SQL-1225a190d59280e3a723e10997dfe0c0" target="_blank">Ver</a>
+             
+           
+           <a href="https://night-string-a4d.notion.site/Proyecto-Base-de-Datos-SQL-1225a190d59280e3a723e10997dfe0c0">
+<button class="btn-proyect"> <span>  Ver proyecto </span> <i class="fa-solid fa-arrow-up-right-from-square"></i> </button>
+ </a>
+           
             </div>
+
+<div class="card">
+                <h3> BDD de flujo en un e-commerse con Selenium </h3>
+                <img src="https://devqa.io/assets/images/selenium-cucumber.png">
+                <p>
+                 Se testea los flujos de un e-commerse aplicando DBB usando cucumber- gherkin - Selenium WebDriver.
+                </p>
+                
+<a href="https://night-string-a4d.notion.site/Selenium-Cucumber-1885a190d592806c9d86f655a6d5fde4">
+<button class="btn-proyect" id="enProceso"> <span>  Proyecto en proceso</span> <i class="fa-solid fa-arrow-up-right-from-square"></i> </button>
+ </a>
+
+            </div>
+
+         
 
             <div class="card">
                 <h3> Pruebas generales y automatizadas de API tipo REST usando POSTMAN</h3>
@@ -142,19 +297,33 @@
                 <p>
                     Se realiza un testeo de API utilizando las consultas más comunes en la plataforma Reqres, una API REST alojada en un host, diseñada específicamente para prueba de testers. Se automatizan casos con JavaScript. 
                 </p>
-                <a href="https://night-string-a4d.notion.site/API-testing-con-Postman-1885a190d5928015b433d27ce0ddf565" target="_blank">Ver</a>
+            
+            <a href="https://night-string-a4d.notion.site/API-testing-con-Postman-1885a190d5928015b433d27ce0ddf565">
+<button class="btn-proyect"> <span>  Ver proyecto </span> <i class="fa-solid fa-arrow-up-right-from-square"></i> </button>
+ </a>
+            
+            
             </div>
 
             <div class="card">
                 <h3>Aplicación de Escritorio para consultar productos</h3>
-                <img src="https://private-user-images.githubusercontent.com/169397593/384223610-39f0fe94-37ba-4f86-a8da-8cf93a06a6b9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDc5OTI1MzksIm5iZiI6MTc0Nzk5MjIzOSwicGF0aCI6Ii8xNjkzOTc1OTMvMzg0MjIzNjEwLTM5ZjBmZTk0LTM3YmEtNGY4Ni1hOGRhLThjZjkzYTA2YTZiOS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTIzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUyM1QwOTIzNTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zNDYzZjZhYzA5MDMzZWJjYzUzYjAyMDBmOTgxMzBiY2M1NDYzY2FkOWU0M2Q4Y2YyZDU2ODJmOWUyYTc1NzY5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.luiy-cutDxzHjxkmoA2NFhVf7oIsU0j7geWJns3yjOo" alt="Imagen de Aplicación de escritorio.">
+                <img src="/imagenes/app-escritorio.png" alt="Imagen de Aplicación de escritorio.">
                 <p>
-                Es una aplicación de escritorio desarrollada para gestionar el inventario de productos en una casa de electrodomésticos, consultando en una base de datos información como nombre, categoría, marca, stock disponible precio y código del producto.
+                Es una aplicación de escritorio  para gestionar el inventario de productos en una casa de electrodomésticos, obteniendo de una base de datos relacional la información de los productos.
 
 La aplicación facilita el control y seguimiento del inventario, brindando una interfaz sencilla para agregar nuevos artículos, editar detalles existentes, eliminar productos obsoletos y consultar rápidamente el stock actualizado. Está pensada para uso interno por personal administrativo o de ventas.
                 </p>
-                <a href="https://github.com/paquitatorres/InventarioStock" target="_blank">Ver</a>
+                
+  
+<a href="https://github.com/paquitatorres/InventarioStock">
+<button class="btn-proyect"> <span>  Ver proyecto </span> <i class="fa-solid fa-arrow-up-right-from-square"></i> </button>
+ </a>
+
+
             </div>
+
+
+
 
         </div>
     </section>
@@ -162,7 +331,7 @@ La aplicación facilita el control y seguimiento del inventario, brindando una i
 
 
 
-<script src="/cursor.js"></script>
+<script src="cursor.js"></script>
 
 
     <footer>
