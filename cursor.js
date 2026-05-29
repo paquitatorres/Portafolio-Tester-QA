@@ -1,4 +1,4 @@
-// Crear el círculo personalizado del cursor
+// Crea el círculo personalizado del cursor
 const cursor = document.createElement("div");
 cursor.classList.add("cursor-circle");
 document.body.appendChild(cursor);
@@ -8,6 +8,12 @@ document.addEventListener("mousemove", e => {
     cursor.style.left = `${e.clientX}px`;
     cursor.style.top = `${e.clientY}px`;
 });
+
+// Desaparecerlo en movile y en pantallas pequeñas
+if (window.matchMedia("(pointer: coarse)").matches) {
+  cursor.style.display = "none";
+  document.body.style.cursor = "auto";
+}
 
 
 const hamburger= document.querySelector(".hamburger");
@@ -27,9 +33,15 @@ document.querySelectorAll(".nav-link").forEach(n => n.
 
 
 
+const btn = document.getElementById('lang-btn');
+let active = false;
 
+btn.addEventListener('click', () => {
+  active = !active;
 
+  document.querySelectorAll('.en').forEach(el => el.style.display = active ? 'none' : '');
+  document.querySelectorAll('.es').forEach(el => el.style.display = active ? 'inline' : 'none');
 
-
-
-
+  btn.classList.toggle('active', active);
+  btn.title = active ? 'Switch to English' : 'Traducir al español';
+});

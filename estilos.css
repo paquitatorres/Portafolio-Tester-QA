@@ -1,132 +1,175 @@
-body{
+/* ============================================================
+   ESTILOS.CSS —  Maria Lujan Torres
+   Organización:
+   1.  Reset & Base
+   2.  Tipografía global
+   3.  Navbar / Header
+   4.  Sección Hero (.uno)
+   5.  Tarjeta de presentación (.caja-central)
+   6.  Botones de la tarjeta (.caja-button)
+   7.  Sección About Me (.dos)
+   8.  Sección Conocimientos (.conocimientos)
+   9.  Tooltips
+   10. Sección Testing Manual (.testingManual)
+   11. Sección Proyectos (.tres / .card)
+   12. Footer
+   13. Botón flotante de idioma (#lang-btn)
+   14. Cursor personalizado
+   15. Selección de texto
+   16. Media Queries (agrupadas al final)
+       - max-width: 1000px  → tablets landscape / pantallas medianas
+       - max-width: 768px   → tablets portrait / móviles grandes
+       - max-width: 600px   → móviles pequeños
+============================================================ */
+
+
+/* ============================================================
+   1. RESET & BASE
+============================================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
     padding: 0;
     margin: 0;
     width: 100%;
-    box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
-    height: 100;
+    cursor: none; /* cursor personalizado activo */
 }
 
-/*el menú gg */
-header{
+html {
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* ============================================================
+   2. TIPOGRAFÍA GLOBAL — listas de cursos
+============================================================ */
+ul {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: left;
+    list-style-position: inside;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    padding-inline-start: 1em;
+    font-weight: 580;
+}
+
+ul li {
+    margin-bottom: 0.3rem;
+}
+
+ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* Selección de texto personalizada */
+::selection {
+    background-color: #21014be1;
+    color: white;
+}
+
+::-moz-selection {
+    background-color: #330F66;
+    color: white;
+}
+
+
+/* ============================================================
+   3. NAVBAR / HEADER
+============================================================ */
+header {
     background-color: rgba(72, 18, 117, 0.877);
     position: sticky;
-    top:0;
+    top: 0;
     z-index: 999;
 }
 
-li{
-    list-style: none;
-
-}
-html {
-  scroll-behavior: smooth;
-}
-
-header a{ 
+header a {
     color: white;
     text-decoration: none;
 }
-.navbar{
+
+.navbar {
     min-height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
 }
-.nav-menu{
+
+.nav-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 35px;
-    margin:0;
-    padding:0; 
+    margin: 0;
+    padding: 0;
 }
 
-h1.nav-branding{
+h1.nav-branding {
     color: white;
-    font-size: clamp(1.2rem,4vw,1.8rem);
-    /*font-size: 2rem;*/
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
     margin: 0;
-    padding:0; 
+    padding: 0;
     line-height: 1;
 }
-.nav-link{
+
+.nav-link {
     transition: 0.4s ease;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     color: orange;
 }
 
-.hamburger{
+/* Icono hamburguesa (oculto en desktop) */
+.hamburger {
     display: none;
     cursor: pointer;
 }
-.bar{
+
+.bar {
     display: block;
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: white;
 }
 
-@media(max-width:768px){
-.hamburger{
-    display: block;
-}
-.hamburger.active .bar:nth-child(2){
-    opacity: 0;
-}
-.hamburger.active .bar:nth-child(1){
-    transform: translateY(8px) rotate(45deg);
 
-}
-.hamburger.active .bar:nth-child(3){
-    transform: translateY(-8px) rotate(-45deg);
-}
-.nav-menu{
-    position: fixed;
-    left: -100%;
-    top: 70px;
-    gap: 0;
-    flex-direction: column;
-    background-color: #431c55;
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-}
-.nav-item{margin: 16px 0;}
-
-.nav-menu.active{
-    left: 0;
-}
-
-
-}
-
-/*tarjeta de presentacion*/
-
-.cara{
-    border-radius: 500px;
-    height: 200px;
-}
-/**/
-.uno{
+/* ============================================================
+   4. SECCIÓN HERO (.uno) — pantalla completa con fondo
+============================================================ */
+.uno {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     height: calc(100vh - 65px);
-    background:#290641 url('imagenes/cielo-estrellado.webp');
+    background: #290641 url('imagenes/cielo-estrellado.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: white;
-    /* padding-top: 10%; */
 }
-.caja-central{
+
+#inicio {
+    /* ancla invisible para el scroll del navbar */
+}
+
+
+/* ============================================================
+   5. TARJETA DE PRESENTACIÓN (.caja-central)
+============================================================ */
+.caja-central {
     margin-top: 10%;
     width: 50%;
     display: flex;
@@ -135,7 +178,9 @@ h1.nav-branding{
     overflow: hidden;
     height: 50%;
 }
-.caja-cara{
+
+/* Lado izquierdo — foto */
+.caja-cara {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,7 +188,13 @@ h1.nav-branding{
     background-color: #525151a6;
 }
 
-.caja-presentacion{
+.cara {
+    border-radius: 500px;
+    height: 200px;
+}
+
+/* Lado derecho — texto */
+.caja-presentacion {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,125 +202,72 @@ h1.nav-branding{
     background-color: #f2f2f2de;
     color: #1d1c1c;
     padding: 10px;
-    box-sizing: border-box;
     overflow-wrap: break-word;
     hyphens: auto;
     overflow: auto;
 }
-/*parrafo en la caj de presentacion*/
-.caja-presentacion h1{
+
+.caja-presentacion h1 {
     margin: 15px;
 }
-.caja-presentacion p {
-word-break: break-word;
-margin: 15px;
-line-height: 1.5;
-}
-/*botones dentro de la caja de presentacion*/
-.caja-button{
-display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  text-decoration: none;
-  color: #353333;
-  font-size: 18px;
-  border-radius: 10px;
-  width: 200px;
-  height: 46px;
-  font-weight: bold;
-  border: 2px solid #201031;
-  transition: 0.3s;
-  box-shadow: 5px 5px 0px 0px rgb(36, 35, 36);
-  background-color: #ecebef;
-  gap: 8px;
-}
-.caja-button:hover {
-  box-shadow: 0 0 #644975;
-  color: #fff;
-  background-color: rgb(126, 98, 224);
-}
 
-.botones {
-  display: flex;
-  flex-direction: row;
-  gap: 25px; 
-  flex-wrap: wrap; 
-  justify-content: center;
-  margin-top: 20px;
+.caja-presentacion p {
+    word-break: break-word;
+    margin: 15px;
+    line-height: 1.5;
 }
 
 .caja-presentacion a {
-  text-decoration: none;
+    text-decoration: none;
+}
+
+.presentacion {
+    /* párrafo de presentación breve */
 }
 
 
+/* ============================================================
+   6. BOTONES DE LA TARJETA (.caja-button / .botones)
+============================================================ */
+.botones {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
 
-@media (max-width: 600px) {
-  .botones {
-    flex-direction: column;
+.caja-button {
+    display: flex;
     align-items: center;
-  }
-
-  .caja-button {
-    width: 100%;
-    max-width: 250px;
-  }
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: #353333;
+    font-size: 18px;
+    border-radius: 10px;
+    width: 200px;
+    height: 46px;
+    font-weight: bold;
+    border: 2px solid #201031;
+    transition: 0.3s;
+    box-shadow: 5px 5px 0px 0px rgb(36, 35, 36);
+    background-color: #ecebef;
+    gap: 8px;
 }
 
-/* correccion de deformacion cuando es más pequeña la ventana para la tarjeta etc*/
-@media (max-width: 768px) {
-  
-  .uno {
-    flex-direction: column;
-    height: auto;
-    align-items: center;
-    padding: 20px 0;
-  }
-
-  
-  .caja-central {
-    flex-direction: column;
-    width: 90%;
-    max-width: 400px;
-    height: auto;
-    overflow: hidden;      
-    border-radius: 20px;   
-    margin: 0 auto;
-  }
-
-  
-  .caja-cara,
-  .caja-presentacion {
-    width: 100%;
-    border-radius: 0;      
-    margin: 0;             
-  }
-
-  
-  .caja-presentacion {
-    padding: 20px;
-    min-height: 300px;     
-  }
-
-  /**/
-  
-  .botones {
-    flex-direction: column;
-    gap: 15px;
-    display: grid;
- grid-template-columns: repeat(auto-fit, 220px);
-  margin-top: 20px;
-  justify-content: center;
-  /*uno mas atras*/
+.caja-button:hover {
+    box-shadow: 0 0 #644975;
+    color: #fff;
+    background-color: rgb(126, 98, 224);
 }
 
 
-}
-
-/*about me , revisar */
-
-.dos{
+/* ============================================================
+   7. SECCIÓN ABOUT ME (.dos)
+============================================================ */
+.dos {
     background-color: #F2F2F2;
     height: 880px;
     display: flex;
@@ -279,27 +277,22 @@ display: flex;
     color: #303030;
     padding-left: 20%;
     padding-right: 20%;
-   
 }
 
 .dos h2 {
-margin-top: 60px;
-margin-bottom: 28px;
+    margin-top: 60px;
+    margin-bottom: 28px;
 }
 
 .dos p {
-text-align: left; 
+    text-align: left;
 }
 
 
-
-
-
-
-
-/**/
-
-.conocimientos{
+/* ============================================================
+   8. SECCIÓN CONOCIMIENTOS (.conocimientos)
+============================================================ */
+.conocimientos {
     background-color: #ffffff;
     min-height: 700px;
     display: flex;
@@ -308,132 +301,134 @@ text-align: left;
     color: #303030;
     padding: 60px 20%;
     text-align: center;
-    gap: 40px;   
+    gap: 40px;
 }
 
 .conocimientos h2 {
-margin-top: 40px;
-margin-bottom: 0px;    
+    margin-top: 40px;
+    margin-bottom: 0px;
 }
 
 .conocimientos p {
     margin-top: 0px;
 }
 
-.tools{
+/* Contenedor de los logos de herramientas */
+.tools {
     width: 100%;
     max-width: 800px;
     margin: 0px auto;
     padding: 0 1rem;
-box-sizing: border-box;
 }
 
-
-
-.tech-list{
+.tech-list {
     display: flex;
     justify-content: center;
-    gap:30px;
+    gap: 30px;
     flex-wrap: wrap;
     margin-bottom: 20px;
     padding-top: 10px;
 }
 
-.tech{
-
+.tech {
     height: 80px;
     object-fit: contain;
     border-radius: 6px;
 }
 
-@media (max-width: 600px) {
-  .tech-list {
-    flex-direction: column;   /* apila verticalmente */
-    align-items: center;      /* centra cada ícono */
-  }
-
-  .tooltip {
-    width: 100%;              /* cada tooltip ocupa todo el ancho disponible */
-    max-width: 200px;         /* opcional: límite para no estirarse demasiado */
-  }
-
-  .tech {
-    max-width: 90px;          /* mantiene un tamaño consistente */
-    width: 100%;
-    height: auto;
-    margin-bottom: 12px;      /* separación vertical */
-  }
-}
-
-
-/*ESPACIO EN CURSOS*/
-
+/* Título separador antes de la lista de cursos */
 .cursos-titulo {
-    margin-top: 60px;
+    margin-top: 90px;
     margin-bottom: 30px;
 }
 
-ul {
-    max-width: 700px;
-    margin: 0 auto 60px; 
-    text-align: left;
-    list-style-position: inside;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    padding-inline-start: 1em;
-    box-sizing: border-box;
-    font-weight: 580;
-}
-ul li {
-  margin-bottom: 0.3rem; }
-ul li:last-child {
-  margin-bottom: 0;
-}
 
-/*etiquetas*/
-
+/* ============================================================
+   9. TOOLTIPS — descripción de cada tecnología al hacer hover
+============================================================ */
 .tooltip {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 .tooltiptext {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  position: absolute;
-  bottom: 110%;                /* Ubica el tooltip arriba de la imagen */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #290641;  /* Fondo oscuro con contraste */
-  color: #fff;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 14px;
-  white-space: normal;
-  width: 300px;
-  box-sizing: border-box;
-  z-index: 10;
-  text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    bottom: 110%;          /* aparece arriba del ícono */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #290641;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: normal;
+    width: 300px;
+    z-index: 10;
+    text-align: center;
 }
-/*probar max-width en caso que el ancho no sea responsive o subsdividir tamaños*/
+
 .tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* ============================================================
+   10. SECCIÓN TESTING MANUAL (.testingManual)
+============================================================ */
+.testingManual {
+    text-align: center;
+    padding: 48px 30px;
+    background-color: #ffffff;
+    color: #303030;
+    margin-bottom: 60px;
+}
+
+.testingManual h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.testingManual p {
+    display: block;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 40px 15px;
+  text-align: center;
+    
 }
 
 
 
+/* Grid de imágenes del proyecto */
+.ProyectoManual {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.ProyectoManual a img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ProyectoManual a img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
 
 
-
-
-
-
-
-
-
-.tres{
+/* ============================================================
+   11. SECCIÓN PROYECTOS (.tres / .card / .btn-proyect)
+============================================================ */
+.tres {
     background-color: #303030;
     display: flex;
     justify-content: flex-start;
@@ -442,45 +437,316 @@ ul li:last-child {
     color: #F2F2F2;
     padding: 20px;
 }
-.proyectos{
+
+.tres a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Grid de cards */
+.proyectos {
     width: 90%;
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
-.card{
+
+.card {
     text-align: center;
     flex: 1 1 300px;
     max-width: 350px;
     border: solid #F2F2F2 1px;
     border-radius: 10px;
     padding: 10px;
-    box-sizing: border-box;
-
-position: relative; 
-padding-bottom: 75px; /* AQUI EL espacio para que el botón no tape contenido */
-overflow: hidden;
-
-
-
-
+    position: relative;
+    padding-bottom: 75px; /* espacio para que el botón no tape el contenido */
+    overflow: hidden;
 }
-.card img{
+
+.card img {
     width: 100%;
     height: auto;
 }
-.card a, footer a {
+
+.card a {
     color: white;
 }
 
-.red-social{
-    height: 60px;
-    background-color: #F2F2F2;
-    border-radius: 10px;
+
+
+/* Botónes nuevos */
+
+.type--A {
+  --line_color: #555555;
+  --back_color: #ffecf6;
+}
+.type--B {
+  --line_color: #1b1919;
+  --back_color: #e9ecff;
+}
+.type--C {
+  --line_color: #af51df;
+  --back_color: #a200d4f3;
+}
+.button {
+  position: relative;
+  z-index: 0;
+  width: 240px;
+  height: 56px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--line_color);
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+.button__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 8px; 
+}
+.button::before,
+.button::after,
+.button__text::before,
+.button__text::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line_color);
+  transition: all 0.5s ease;
+}
+.button::before {
+  top: 0;
+  left: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+.button::after {
+  top: 0;
+  right: 54px;
+  width: 8px;
+}
+.button__text::before {
+  bottom: 0;
+  right: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+.button__text::after {
+  bottom: 0;
+  left: 54px;
+  width: 8px;
+}
+.button__line {
+  position: absolute;
+  top: 0;
+  width: 56px;
+  height: 100%;
+  overflow: hidden;
+}
+.button__line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 300px;
+  border: solid 3px var(--line_color);
+}
+.button__line:nth-child(1),
+.button__line:nth-child(1)::before {
+  left: 0;
+}
+.button__line:nth-child(2),
+.button__line:nth-child(2)::before {
+  right: 0;
+}
+.button:hover {
+  letter-spacing: 6px;
+}
+.button:hover::before,
+.button:hover .button__text::before {
+  width: 8px;
+}
+.button:hover::after,
+.button:hover .button__text::after {
+  width: calc(100% - 56px * 2 - 16px);
+}
+.button__drow1,
+.button__drow2 {
+  position: absolute;
+  z-index: -1;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+}
+.button__drow1 {
+  top: -16px;
+  left: 40px;
+  width: 32px;
+  height: 0;
+  transform: rotate(30deg);
+}
+.button__drow2 {
+  top: 44px;
+  left: 77px;
+  width: 32px;
+  height: 0;
+  transform: rotate(-127deg);
+}
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2::before,
+.button__drow2::after {
+  content: "";
+  position: absolute;
+}
+.button__drow1::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-60deg);
+}
+.button__drow1::after {
+  top: -10px;
+  left: 45px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(69deg);
+}
+.button__drow2::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-146deg);
+}
+.button__drow2::after {
+  bottom: 26px;
+  left: -40px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-262deg);
+}
+.button__drow1,
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2,
+.button__drow2::before,
+.button__drow2::after {
+  background: var(--back_color);
+}
+.button:hover .button__drow1 {
+  animation: drow1 ease-in 0.06s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow1::before {
+  animation: drow2 linear 0.08s 0.06s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow1::after {
+  animation: drow3 linear 0.03s 0.14s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow2 {
+  animation: drow4 linear 0.06s 0.2s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow2::before {
+  animation: drow3 linear 0.03s 0.26s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow2::after {
+  animation: drow5 linear 0.06s 0.32s;
+  animation-fill-mode: forwards;
+}
+@keyframes drow1 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100px;
+  }
+}
+@keyframes drow2 {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  11% {
+    opacity: 1;
+  }
+  100% {
+    width: 120px;
+  }
+}
+@keyframes drow3 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80px;
+  }
+}
+@keyframes drow4 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 120px;
+  }
+}
+@keyframes drow5 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 124px;
+  }
 }
 
-footer{
+.container {
+position: absolute;
+bottom: 15px;
+
+
+  width: 100%;
+  height: auto;
+  padding: 10px 0 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button:not(:last-child) {
+  margin-bottom: 64px;
+}
+
+
+
+
+
+
+
+/* ============================================================
+   12. FOOTER
+============================================================ */
+footer {
     background-color: #424242;
     display: flex;
     flex-direction: column;
@@ -489,109 +755,81 @@ footer{
     color: #F2F2F2;
     height: 250px;
 }
-.contacto{
+
+footer a {
+    color: white;
+}
+
+.contacto {
     width: 30%;
     display: flex;
     justify-content: center;
     gap: 15px;
 }
 
-@media (max-width: 1000px) {
-    .caja-central{
-        width: 90%;
-        height: 70%;
-        flex-direction: column;
-    }
-    .caja-cara{
-        width: 100%;
-        height: 50%;
-    }
-    .caja-presentacion{
-        width: 100%;
-        height: 50%;
-        align-items: flex-start;
-    }
-    .aptitudes{
-        width: auto;
-    }
-    .dos{
-        height: auto;
-        padding: 0 10px 10px 10px;
-
-    }
-    .tres{
-        height: auto;
-    }
-    .proyectos{
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-        padding-bottom: 20px;
-        gap: 15px;
-    }
-    .card{
-        width: 80%;
-        margin-top: 20px;
-        flex: 1 1 80%;
-        max-width: 90%;
-    }
-    .red-social{
-        margin: 0 10px 0 10px;
-    }
-     .contacto {
-        width: 80%;
-    }
+.red-social {
+    height: 60px;
+    background-color: #F2F2F2;
+    border-radius: 10px;
 }
 
 
-.tres a {text-decoration: none;}
+/* ============================================================
+   13. BOTÓN FLOTANTE DE IDIOMA (#lang-btn)
+       Violeta claro = inglés activo
+       Púrpura fuerte = español activo
+============================================================ */
 
-.btn-proyect i {margin-left: 8px;}
-
-.btn-proyect {
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  text-decoration: none;
-  color: #333333;
-  font-size: 18px;
-  border-radius: 5px;
-  width: 230px;
-  height: 40px;
-  font-weight: bold;
-  border: 2px solid #2d2058;
-  transition: 0.3s;
-  box-shadow: 5px 5px 0px 0px rgb(152, 157, 187);
-  background-color: #f6e1ff;
- 
- position:absolute;
- bottom: 5px;
- left: 50%;
-transform: translateX(-50%); 
-  z-index: 10;
- 
-}
- #enProceso.btn-proyect{ 
- color: #f1f1f1;
- background-color: #3c383d;
+/* Oculta todos los textos en español por defecto */
+.es {
+    display: none;
 }
 
+#lang-btn {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    width: 34px;
+    padding: 10px 0;
+    border-radius: 10px;
+    border: none;
+    background: #c4b5e8;      /* violeta clarito = inactivo */
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-family: sans-serif;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: background 0.25s ease, transform 0.15s ease;
+    z-index: 9999;
+}
 
-.btn-proyect:hover {
-  box-shadow: 0 0 #333;
-  color: #fff;
-  background-color: #7654da;
+.btn-flag {
+    font-size: 15px;
+    line-height: 1;
+}
+
+.btn-label {
+    font-size: 9px;
+    color: #fff;
+}
+
+#lang-btn:hover {
+    transform: scale(1.06);
+}
+
+#lang-btn.active {
+    background: #7c3aed;      /* púrpura fuerte = español activo */
 }
 
 
-
-/*CURSOR REDONDO*/
-
+/* ============================================================
+   14. CURSOR PERSONALIZADO
+============================================================ */
 .cursor-circle {
     position: fixed;
     top: 0;
@@ -607,67 +845,206 @@ transform: translateX(-50%);
 }
 
 
-body {
-    cursor: none;
+/* ============================================================
+   MEDIA QUERIES
+   Agrupadas de mayor a menor breakpoint para facilitar
+   el mantenimiento. Cada bloque indica qué dispositivos afecta.
+============================================================ */
+
+
+/* ------------------------------------------------------------
+   max-width: 1000px — Tablets landscape / pantallas medianas
+   Ajusta la tarjeta hero y la sección de proyectos
+------------------------------------------------------------ */
+@media (max-width: 1000px) {
+
+    /* Tarjeta hero: apila cara y texto verticalmente */
+    .caja-central {
+        width: 90%;
+        height: 70%;
+        flex-direction: column;
+    }
+
+    .caja-cara {
+        width: 100%;
+        height: 50%;
+    }
+
+    .caja-presentacion {
+        width: 100%;
+        height: 50%;
+        align-items: flex-start;
+    }
+
+    /* About me: reduce padding lateral */
+    .dos {
+        height: auto;
+        padding: 0 10px 10px 10px;
+    }
+
+    /* Proyectos: apila las cards en columna */
+    .tres {
+        height: auto;
+    }
+
+    .proyectos {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        gap: 15px;
+    }
+
+    .card {
+        width: 80%;
+        margin-top: 20px;
+        flex: 1 1 80%;
+        max-width: 90%;
+    }
+
+    /* Footer */
+    .contacto {
+        width: 80%;
+    }
+
+    .red-social {
+        margin: 0 10px 0 10px;
+    }
 }
 
-.cursos-titulo {
-    margin-top: 90px; 
-}
 
-/*.doss {
-    padding-bottom: 90px;
-}*/
+/* ------------------------------------------------------------
+   max-width: 768px — Tablets portrait / móviles grandes
+   Activa el menú hamburguesa y ajusta el hero y testing manual
+------------------------------------------------------------ */
+@media (max-width: 768px) {
 
+    /* --- Navbar: menú hamburguesa --- */
+    .hamburger {
+        display: block;
+    }
 
+    /* Animación de las barras al abrir */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
 
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
 
-/* EL AREA DE PROYECTO DE TESTING */
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 
+    /* Menú desplegable desde la izquierda */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #431c55;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
 
-.testingManual {
-    text-align: center;
-    padding: 48px 30px;
-    background-color: #ffffff;
-    color: #303030;
-    margin-bottom:  60px;
-}
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
 
-.testingManual h2 {
-    font-size: 2rem;
+    .nav-item:last-child {
     margin-bottom: 20px;
 }
 
-.testingManual p {
-margin-bottom: 25px;
-}
+    .nav-menu.active {
+        left: 0;
+    }
 
-.ProyectoManual {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 1500px;
-    margin: 0 auto;
-}
+    .nav-item {
+        margin: 16px 0;
+    }
 
-.ProyectoManual a img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    /* --- Hero: layout vertical --- */
+    .uno {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        padding: 20px 0;
+    }
 
-.ProyectoManual a img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
+    .caja-central {
+        flex-direction: column;
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        overflow: hidden;
+        border-radius: 20px;
+        margin: 0 auto;
+    }
 
+    .caja-cara,
+    .caja-presentacion {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
 
-@media(max-width: 768px) {
+    .caja-presentacion {
+        padding: 20px;
+        min-height: 300px;
+    }
+
+    /* Botones en grid centrado */
+    .botones {
+        flex-direction: column;
+        gap: 15px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 220px);
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    /* --- Testing Manual: una columna --- */
     .ProyectoManual {
         grid-template-columns: 1fr;
     }
 }
 
 
+/* ------------------------------------------------------------
+   max-width: 600px — Móviles pequeños
+   Ajusta botones y logos de tecnologías
+------------------------------------------------------------ */
+@media (max-width: 600px) {
 
+    /* Botones del hero en columna centrada */
+    .botones {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .caja-button {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Logos de tecnologías: columna vertical */
+    .tech-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tooltip {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .tech {
+        max-width: 90px;
+        width: 100%;
+        height: auto;
+        margin-bottom: 12px;
+    }
+}
